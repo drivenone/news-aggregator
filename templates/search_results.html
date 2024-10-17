@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Search Results For: {{ query }}</h2>
+<div class="articles">
+    {% for article in articles %}
+    <article>
+        <h2><a href="{{ article[2].link }}">{{ article[2].title }}</a></h2>
+        <p>{{ article[2].published }}</p>
+        <p>Source: {{ article[0] }} | Category: {{ article[1]|capitalize }}</p>
+    </article>
+    {% endfor %}
+</div>
+{% endblock %}
